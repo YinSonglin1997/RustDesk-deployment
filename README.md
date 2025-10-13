@@ -9,7 +9,7 @@
 ### 1. 执行代码
 
 ```
-docker compose compose.yml up -d
+docker compose -f compose.yml up -d
 ```
 
 ### 2. 查看容器状态
