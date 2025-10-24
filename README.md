@@ -6,13 +6,19 @@
 
 ## 2. docker启动服务
 
-### 1. 执行代码
+### 1. 导入镜像
+
+```
+docker load -i rustdesk.tar
+```
+
+### 2. 启动容器
 
 ```
 docker compose -f compose.yml up -d
 ```
 
-### 2. 查看容器状态
+### 3. 查看容器状态
 
 ```
 docker ps -a --filter "name=^/(hbbs|hbbr)$"
@@ -22,7 +28,7 @@ docker ps -a --filter "name=^/(hbbs|hbbr)$"
 >
 > 如果容器起来了，则进入下一步，否则排查问题。
 
-### 3. 获取key
+### 4. 获取key
 
 容器成功运行后，会在当前目录下生成一个`data`文件夹，进入`data`文件夹并`cat id_ed25519.pub`，终端会出现一串密钥，将其保存，后续配置客户端要用到。
 
